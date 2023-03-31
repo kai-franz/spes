@@ -29,6 +29,10 @@ public class ProcBenchParser {
         public void addTableSchema(){
             SqlToRelConverter.configBuilder().build();
             defaultSchema.add("CUSTOMER", new Customer());
+            defaultSchema.add("CATALOG_SALES", new SimpleQueryTests.procBenchSchema.CatalogSales());
+            defaultSchema.add("CATALOG_SALES_HISTORY", new SimpleQueryTests.procBenchSchema.CatalogSalesHistory());
+            defaultSchema.add("DATE_DIM", new SimpleQueryTests.procBenchSchema.DateDim());
+            defaultSchema.add("CUSTOMER_ADDRESS", new SimpleQueryTests.procBenchSchema.CustomerAddress());
         }
 
         public RelNode getRelNode(String sql) throws SqlParseException, ValidationException, RelConversionException{
