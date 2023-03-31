@@ -9,7 +9,7 @@ import org.apache.calcite.rel.RelNode;
 public class Sudf1 {
     public static void main(String[] args) throws  Exception{
         Context z3Context = new Context();
-        simpleParser parser = new simpleParser();
+        ProcBenchParser parser = new ProcBenchParser();
         RelNode newNode = parser.getRelNode("SELECT ca_state, d_year, d_qoy, SUM(cs_net_paid_inc_ship_tax) AS total_large_purchases\n" +
                 "  FROM catalog_sales_history,\n" +
                 "       customer,\n" +
@@ -25,7 +25,7 @@ public class Sudf1 {
                 " ORDER BY ca_state, d_year, d_qoy");
         AlgeNode algeExpr = AlgeRule.normalize(AlgeNodeParserPair.constructAlgeNode(newNode,z3Context));
         System.out.println(algeExpr);
-        simpleParser parser2 = new simpleParser();
+        ProcBenchParser parser2 = new ProcBenchParser();
         RelNode newNode2 = parser2.getRelNode("SELECT ca_state,\n" +
                 "       d_year,\n" +
                 "       d_qoy,\n" +
