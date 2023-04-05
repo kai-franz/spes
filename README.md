@@ -15,7 +15,8 @@ A tool for checking equivalence of SQL queries.
 5. Build the project (hammer icon in IntelliJ)
 6. To use SPES, you need to set the environment variables `LD_LIBRARY_PATH` and `DYLD_LIBRARY_PATH` to the path of
    the `bin` folder in the z3 directory. For example, if you cloned the repository to `/Users/test/spes`, you would set
-   the environment variables to `/Users/test/spes/z3-4.6.0-x64-osx-10.11.6/bin`.
+   the environment variables to `/Users/test/spes/z3-4.6.0-x64-osx-10.11.6/bin`. You also need to add this
+   to `java.library.path`.
     - To do this in IntelliJ, go to `Run > Edit Configurations...` and click on `Edit configuration templates` in the
       bottom left. Then click on `Application` and paste this to the `Environment variables` section, changing the
       directory to point to your z3
